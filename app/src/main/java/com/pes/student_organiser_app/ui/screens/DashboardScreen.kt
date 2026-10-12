@@ -111,7 +111,7 @@ fun DashboardScreen(
 
                 Spacer(Modifier.height(20.dp))
                 Text(
-                    "Urgent Deadlines",
+                    "Assignments Due Soon",
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold
                 )

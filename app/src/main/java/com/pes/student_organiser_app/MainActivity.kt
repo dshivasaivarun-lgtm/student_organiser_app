@@ -123,7 +123,8 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(Screen.Profile.route) {
-                            ProfileScreen(navController)
+                            ProfileScreen(navController , assignments = assignments)
+
                         }
 
                         composable(Screen.Settings.route) {

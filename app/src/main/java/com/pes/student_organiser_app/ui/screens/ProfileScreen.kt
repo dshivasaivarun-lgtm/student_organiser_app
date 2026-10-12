@@ -19,9 +19,11 @@ import com.pes.student_organiser_app.navigation.Screen
 import com.pes.student_organiser_app.ui.components.AppBar
 import com.pes.student_organiser_app.ui.components.BottomBar
 import com.pes.student_organiser_app.ui.components.StudentProfile
+import androidx.navigation.NavController
+import com.pes.student_organiser_app.Assignment
 
 @Composable
-fun ProfileScreen(navController: NavHostController) {
+fun ProfileScreen(navController: NavHostController,assignments: List<Assignment>) {
     Scaffold(
         topBar = {
             AppBar(title = "My Profile")
@@ -47,13 +49,15 @@ fun ProfileScreen(navController: NavHostController) {
                 text = "Academic Overview",
                 style = MaterialTheme.typography.titleLarge
             )
+            val completedCount = assignments.count { it.isCompleted }
+            val pendingCount = assignments.count { !it.isCompleted }
 
             Card {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text("Semester: 5")
-                    Text("Active Courses: 3")
-                    Text("Assignments Completed: 1")
-                    Text("Assignments Pending: 2")
+                    Text("Active Courses: 5")
+                    Text("Assignments Completed: $completedCount")
+                    Text("Assignments Pending: $pendingCount")
                 }
             }
         }
